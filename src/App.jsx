@@ -46,6 +46,7 @@ const App = () => {
       post: "My first tournament today!",
       viewed: false,
       message: "",
+      commentedPicture: null,
     },
     {
       name: "Angela Gray",
@@ -55,6 +56,7 @@ const App = () => {
       post: "",
       viewed: false,
       message: "",
+      commentedPicture: null,
     },
     {
       name: "Jacob Thompson",
@@ -64,6 +66,7 @@ const App = () => {
       post: "Chess Club",
       viewed: false,
       message: "",
+      commentedPicture: null,
     },
     {
       name: "Rizky Hasanuddin",
@@ -72,7 +75,8 @@ const App = () => {
       about: "sent you a private message",
       post: "",
       viewed: true,
-      message: "Hello, thanks for setting up the Chess Club. I’ve been a member for a few weeks now and I’m already having lots of fun and improving my game."
+      message: "Hello, thanks for setting up the Chess Club. I’ve been a member for a few weeks now and I’m already having lots of fun and improving my game.",
+      commentedPicture: null,
     },
     {
       name: "Kimberly Smith",
@@ -83,6 +87,26 @@ const App = () => {
       viewed: true,
       message: "",
       commentedPicture: commentedPicture,
+    },
+    {
+      name: "Nathan Peterson",
+      picture: profile6,
+      time: "2 weeks",
+      about: "reacted to your recent post",
+      post: "5 end-game strategies to increase your win rate",
+      viewed: true,
+      message: "",
+      commentedPicture: null,
+    },
+    {
+      name: "Anna Kim",
+      picture: profile7,
+      time: "2 weeks",
+      about: "left the group",
+      post: "Chess Club",
+      viewed: true,
+      message: "",
+      commentedPicture: null,
     },
   ])
 
