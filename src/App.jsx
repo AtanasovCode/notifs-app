@@ -7,6 +7,11 @@ import profile1 from './assets/images/profile-pictures/profile1.svg';
 import profile2 from './assets/images/profile-pictures/profile2.svg';
 import profile3 from './assets/images/profile-pictures/profile3.svg';
 import profile4 from './assets/images/profile-pictures/profile4.svg';
+import profile5 from './assets/images/profile-pictures/profile5.svg';
+import profile6 from './assets/images/profile-pictures/profile6.svg';
+import profile7 from './assets/images/profile-pictures/profile7.svg';
+
+import commentedPicture from './assets/images/commented-picture.png';
 
 
 
@@ -40,6 +45,7 @@ const App = () => {
       about: "reacted to your recent post",
       post: "My first tournament today!",
       viewed: false,
+      message: "",
     },
     {
       name: "Angela Gray",
@@ -48,6 +54,7 @@ const App = () => {
       about: "followed you",
       post: "",
       viewed: false,
+      message: "",
     },
     {
       name: "Jacob Thompson",
@@ -56,7 +63,27 @@ const App = () => {
       about: "has joined your group",
       post: "Chess Club",
       viewed: false,
-    }
+      message: "",
+    },
+    {
+      name: "Rizky Hasanuddin",
+      picture: profile4,
+      time: "5 days",
+      about: "sent you a private message",
+      post: "",
+      viewed: true,
+      message: "Hello, thanks for setting up the Chess Club. I’ve been a member for a few weeks now and I’m already having lots of fun and improving my game."
+    },
+    {
+      name: "Kimberly Smith",
+      picture: profile5,
+      time: "1 week",
+      about: "commented on your picture",
+      post: "",
+      viewed: true,
+      message: "",
+      commentedPicture: commentedPicture,
+    },
   ])
 
   return (
@@ -76,7 +103,7 @@ const App = () => {
           {
             notifications.map((notif) => {
               return (
-                <Notif 
+                <Notif
                   key={notif.name}
                   name={notif.name}
                   picture={notif.picture}
@@ -84,6 +111,8 @@ const App = () => {
                   about={notif.about}
                   post={notif.post}
                   viewed={notif.viewed}
+                  message={notif.message}
+                  commentedPicture={notif.commentedPicture}
                 />
               );
             })

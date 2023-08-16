@@ -5,6 +5,7 @@ const ReactNotif = ({
     notifPost,
     notifText,
     viewed,
+    commentedPicture,
 }) => {
     return (
         <Container>

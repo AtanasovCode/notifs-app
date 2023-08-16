@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
+
 import ReactNotif from "./ReactNotif";
+
 
 const Notif = ({
     picture,
@@ -9,11 +11,13 @@ const Notif = ({
     post,
     time,
     viewed,
+    message,
+    commentedPicture,
 }) => {
     return (
         <Container>
             <ProfilePicture>
-                <Picture 
+                <Picture
                     src={picture}
                     alt="profile picture"
                 />
@@ -22,15 +26,23 @@ const Notif = ({
                 <ProfileName>
                     {name}
                 </ProfileName>
-                <ReactNotif 
+                <ReactNotif
                     notifText={about}
                     notifPost={post}
                     viewed={viewed}
+                    commentedPicture={commentedPicture}
                 />
                 <TimeAgo>
                     {time} ago
                 </TimeAgo>
+                <PrivateMessage>
+                    {message}
+                </PrivateMessage>
             </TextContainer>
+            {
+                commentedPicture &&
+                <CommentedPicture src={commentedPicture} />
+            }
         </Container>
     );
 }
@@ -40,7 +52,7 @@ export default Notif;
 
 const Container = styled.div`
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     margin-bottom: 40px;
 `;
@@ -58,6 +70,7 @@ const Picture = styled.img`
 `;
 
 const TextContainer = styled.div`
+
 `;
 
 const ProfileName = styled.span`
@@ -78,4 +91,24 @@ const TimeAgo = styled.div`
     font-weight: 500;
     line-height: normal;
     margin-top: 4px;
+`;
+
+const PrivateMessage = styled.div`
+    color: var(--dark-grey-blue, #5E6778);
+    font-family: Plus Jakarta Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 20px;
+`;
+
+const CommentedPicture = styled.img`
+    display: inline-block;
+    width: 39px;
+    height: 39px;
+    min-width: 39px;
+    border-radius: 7px;
+    overflow: hidden;
+    margin-left: 10px;
 `;
