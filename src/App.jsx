@@ -117,10 +117,14 @@ const App = () => {
         <Heading>
           <Title>
             Notifications
+
+            <NotifCount>
+              3
+            </NotifCount>
           </Title>
-          <NotifCount>
-            3
-          </NotifCount>
+          <MarkAll>
+            mark all as read
+          </MarkAll>
         </Heading>
 
         <NotifsContainer>
@@ -163,7 +167,7 @@ const Heading = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding: 25px;
 `;
 
@@ -175,11 +179,15 @@ const Title = styled.div`
   font-weight: 800;
   line-height: normal;
   margin-right: 10px;
+  display: flex;
 `;
 
 const NotifCount = styled.div`
   width: 32px;
   height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
   border-radius: 6px;
   text-align: center;
@@ -192,6 +200,18 @@ const NotifCount = styled.div`
   font-style: normal;
   font-weight: 800;
   line-height: normal;
+  margin-left: 10px;
+`;
+
+const MarkAll = styled.div`
+  color: var(--dark-grey-blue, #5E6778);
+  text-align: right;
+  font-family: Plus Jakarta Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: 15px;
 `;
 
 const NotifsContainer = styled.div`

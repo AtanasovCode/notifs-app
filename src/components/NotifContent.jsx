@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { useState } from "react";
 
-const ReactNotif = ({
+const NotifContent = ({
     notifPost,
     notifText,
     viewed,
@@ -23,7 +22,7 @@ const ReactNotif = ({
     );
 }
 
-export default ReactNotif;
+export default NotifContent;
 
 const Container = styled.span`
     color: var(--dark-grey-blue, #5E6778);

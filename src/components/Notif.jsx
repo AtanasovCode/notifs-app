@@ -1,7 +1,5 @@
 import styled from "styled-components";
-
-
-import ReactNotif from "./ReactNotif";
+import NotifContent from "./NotifContent";
 
 
 const Notif = ({
@@ -26,7 +24,7 @@ const Notif = ({
                 <ProfileName>
                     {name}
                 </ProfileName>
-                <ReactNotif
+                <NotifContent
                     notifText={about}
                     notifPost={post}
                     viewed={viewed}
@@ -61,7 +59,7 @@ const ProfilePicture = styled.div`
     width: 39px;
     height: 39px;
     min-width: 39px;
-    margin-right: 20px;
+    margin-right: 15px;
 `;
 
 const Picture = styled.img`
@@ -110,5 +108,5 @@ const CommentedPicture = styled.img`
     min-width: 39px;
     border-radius: 7px;
     overflow: hidden;
-    margin-left: 10px;
+    margin-left: 15px;
 `;
