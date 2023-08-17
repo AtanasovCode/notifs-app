@@ -171,7 +171,7 @@ export default App;
 
 const Container = styled.div` 
   margin-top: 20px;
-  display: flex;
+  display: flex; 
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
@@ -183,6 +183,7 @@ const Container = styled.div`
 
   @media (min-width: 768px) {
     width: 730px;
+    height: 839px;
     margin: 63px 0;
   }
 `;
@@ -262,5 +263,5 @@ const MarkAll = styled.div`
 const NotifsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 30px;
+  margin: 0 50px;
 `;

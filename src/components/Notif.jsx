@@ -15,30 +15,32 @@ const Notif = ({
 }) => {
     return (
         <Container>
-            <ProfilePicture>
-                <Picture
-                    src={picture}
-                    alt="profile picture"
-                />
-            </ProfilePicture>
-            <TextContainer>
-                <ProfileName>
-                    {name}
-                </ProfileName>
-                <NotifContent
-                    theme={theme}
-                    notifText={about}
-                    notifPost={post}
-                    viewed={viewed}
-                    commentedPicture={commentedPicture}
-                />
-                <TimeAgo>
-                    {time} ago
-                </TimeAgo>
-                <PrivateMessage>
-                    {message}
-                </PrivateMessage>
-            </TextContainer>
+            <Wrapper>
+                <ProfilePicture>
+                    <Picture
+                        src={picture}
+                        alt="profile picture"
+                    />
+                </ProfilePicture>
+                <TextContainer>
+                    <ProfileName>
+                        {name}
+                    </ProfileName>
+                    <NotifContent
+                        theme={theme}
+                        notifText={about}
+                        notifPost={post}
+                        viewed={viewed}
+                        commentedPicture={commentedPicture}
+                    />
+                    <TimeAgo>
+                        {time} ago
+                    </TimeAgo>
+                    <PrivateMessage>
+                        {message}
+                    </PrivateMessage>
+                </TextContainer>
+            </Wrapper>
             {
                 commentedPicture &&
                 <CommentedPicture src={commentedPicture} />
@@ -53,8 +55,14 @@ export default Notif;
 const Container = styled.div`
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: space-between;
     margin-bottom: 5px;
+`;
+
+const Wrapper = styled.div`
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
 `;
 
 const ProfilePicture = styled.div`
