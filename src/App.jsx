@@ -138,7 +138,7 @@ const App = () => {
             <Switch theme={theme} toggleTheme={toggleTheme} />
           </Title>
           <MarkAll>
-            mark all as read
+            mark as read
           </MarkAll>
         </Heading>
 
@@ -172,7 +172,6 @@ export default App;
 const Container = styled.div` 
   transition: all .4s ease;
   margin-top: 60px;
-  position: relative;
   display: flex; 
   flex-direction: column;
   align-items: flex-start;
@@ -201,7 +200,7 @@ const Heading = styled.div`
 const Title = styled.div`
   color: ${props => props.theme.grayBlue900};
   font-family: Plus Jakarta Sans;
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 800;
   line-height: normal;
@@ -245,7 +244,7 @@ const MarkAll = styled.div`
   color: ${props => props.theme.grayBlue700};
   text-align: right;
   font-family: Plus Jakarta Sans;
-  font-size: 14px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;

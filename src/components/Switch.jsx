@@ -47,6 +47,13 @@ const Container = styled.div`
         margin-left: 22px;
     }
 
+    @media (max-width: 375px) {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     #pane {
         transition: all .4s ease;
     }
