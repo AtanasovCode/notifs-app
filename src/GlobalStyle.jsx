@@ -11,5 +11,9 @@ export const GlobalStyle = createGlobalStyle`
     html {
         min-height: 100vh;
         font-family: 'Plus Jakarta Sans', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: ${props => props.theme.bodyBackground};
     }
 `;

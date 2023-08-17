@@ -16,22 +16,32 @@ import commentedPicture from './assets/images/commented-picture.png';
 
 
 import Notif from "./components/Notif";
+import Switch from "./components/Switch";
 
 const light = {
   blue: "#0A327B",
-  red: "#F65552",
+  notif: "#0A327B",
+  notifCount: "#FFFFFF",
   grayBlue900: "#1C202B",
   grayBlue700: "#5E6778",
   grayBlue500: "#939CAD",
   grayBlue300: "#E5EFFA",
   grayBlue100: "#DDE7EE",
-  snow: "#F7FAFD",
+  bodyBackground: "#F7FAFD",
   background: "#FFFFFF"
 }
 
 const dark = {
-  blue: "#0A327B",
-  red: "#F65552",
+  blue: "#75a4fc",
+  notif: "#2b72f5",
+  notifCount: "#111111",
+  grayBlue100: "#1C202B",
+  grayBlue300: "#5E6778",
+  grayBlue500: "#939CAD",
+  grayBlue700: "#E5EFFA",
+  grayBlue900: "#DDE7EE",
+  background: "#15132d",
+  bodyBackground: "#0c0b18",
 }
 
 const App = () => {
@@ -110,10 +120,15 @@ const App = () => {
     },
   ])
 
+  const toggleTheme = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  }
+
   return (
     <ThemeProvider theme={theme === "dark" ? dark : light}>
       <GlobalStyle />
       <Container>
+        <Switch theme={theme} toggleTheme={toggleTheme} />
         <Heading>
           <Title>
             Notifications
@@ -133,6 +148,7 @@ const App = () => {
               return (
                 <Notif
                   key={notif.name}
+                  theme={theme}
                   name={notif.name}
                   picture={notif.picture}
                   time={notif.time}
@@ -153,14 +169,22 @@ const App = () => {
 
 export default App;
 
-const Container = styled.div`
+const Container = styled.div` 
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  min-height: 100vh;
   background-color: ${props => props.theme.background};
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: ${props => props.theme.background};
+  box-shadow: 0px 20px 60px 0px rgba(73, 97, 168, 0.05);
 
+  @media (min-width: 768px) {
+    width: 730px;
+    margin: 63px 0;
+  }
 `;
 
 const Heading = styled.div`
@@ -168,11 +192,11 @@ const Heading = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 25px;
+  padding: 32px;
 `;
 
 const Title = styled.div`
-  color: var(--very-dark-grey-blue, #1C202B);
+  color: ${props => props.theme.grayBlue900};
   font-family: Plus Jakarta Sans;
   font-size: 20px;
   font-style: normal;
@@ -180,6 +204,13 @@ const Title = styled.div`
   line-height: normal;
   margin-right: 10px;
   display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 24px;
+  }
 `;
 
 const NotifCount = styled.div`
@@ -191,8 +222,8 @@ const NotifCount = styled.div`
   flex-shrink: 0;
   border-radius: 6px;
   text-align: center;
-  background: var(--1-blue, #0A327B);
-  color: var(--9-white, #FFF);
+  background: ${props => props.theme.notif};
+  color: ${props => props.theme.notifCount};
   font-feature-settings: 'clig' off, 'liga' off;
   /* Body (Bold) */
   font-family: Plus Jakarta Sans;
@@ -200,11 +231,15 @@ const NotifCount = styled.div`
   font-style: normal;
   font-weight: 800;
   line-height: normal;
-  margin-left: 10px;
+  margin-left: 9px;
+
+  @media (min-width: 768px) {
+    margin-left: 22px;
+  }
 `;
 
 const MarkAll = styled.div`
-  color: var(--dark-grey-blue, #5E6778);
+  color: ${props => props.theme.grayBlue700};
   text-align: right;
   font-family: Plus Jakarta Sans;
   font-size: 14px;
@@ -212,10 +247,20 @@ const MarkAll = styled.div`
   font-weight: 500;
   line-height: normal;
   margin-left: 15px;
+
+  &:hover {
+    color: ${props => props.theme.blue};
+    font-feature-settings: 'clig' off, 'liga' off;
+    cursor: pointer;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const NotifsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  margin: 0 30px;
 `;

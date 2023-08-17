@@ -11,6 +11,7 @@ const Notif = ({
     viewed,
     message,
     commentedPicture,
+    theme,
 }) => {
     return (
         <Container>
@@ -25,6 +26,7 @@ const Notif = ({
                     {name}
                 </ProfileName>
                 <NotifContent
+                    theme={theme}
                     notifText={about}
                     notifPost={post}
                     viewed={viewed}
@@ -52,14 +54,21 @@ const Container = styled.div`
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-bottom: 40px;
+    margin-bottom: 5px;
 `;
 
 const ProfilePicture = styled.div`
     width: 39px;
     height: 39px;
     min-width: 39px;
-    margin-right: 15px;
+    margin-right: 13px;
+    
+    @media (min-width: 768px) {
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+        margin-right: 19px;
+    }
 `;
 
 const Picture = styled.img`
@@ -72,33 +81,43 @@ const TextContainer = styled.div`
 `;
 
 const ProfileName = styled.span`
-    color: var(--very-dark-grey-blue, #1C202B);
+    color: ${props => props.theme.grayBlue900};
     font-family: Plus Jakarta Sans;
     font-size: 14px;
     font-style: normal;
     font-weight: 800;
     line-height: normal;
     margin-right: 4px;
+
+    @media (min-width: 768px) {
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-size: 16px;
+    }
 `;
 
 const TimeAgo = styled.div`
-    color: var(--5-grey-blue, #939CAD);
+    color: ${props => props.theme.grayBlue500};
     font-family: Plus Jakarta Sans;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     margin-top: 4px;
+
+    @media (min-width: 768px) {
+        font-size: 16px;
+    }
 `;
 
 const PrivateMessage = styled.div`
-    color: var(--dark-grey-blue, #5E6778);
+    color: ${props => props.theme.grayBlue700};
     font-family: Plus Jakarta Sans;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    padding: 20px;
+    padding: 25px;
+    max-width: 526px;
 `;
 
 const CommentedPicture = styled.img`
