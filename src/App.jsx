@@ -33,7 +33,7 @@ const light = {
 
 const dark = {
   blue: "#75a4fc",
-  notif: "#2b72f5",
+  notif: "#00FFA3",
   notifCount: "#111111",
   grayBlue100: "#1C202B",
   grayBlue300: "#5E6778",
@@ -128,7 +128,6 @@ const App = () => {
     <ThemeProvider theme={theme === "dark" ? dark : light}>
       <GlobalStyle />
       <Container>
-        <Switch theme={theme} toggleTheme={toggleTheme} />
         <Heading>
           <Title>
             Notifications
@@ -136,6 +135,7 @@ const App = () => {
             <NotifCount>
               3
             </NotifCount>
+            <Switch theme={theme} toggleTheme={toggleTheme} />
           </Title>
           <MarkAll>
             mark all as read
@@ -170,7 +170,9 @@ const App = () => {
 export default App;
 
 const Container = styled.div` 
-  margin-top: 20px;
+  transition: all .4s ease;
+  margin-top: 60px;
+  position: relative;
   display: flex; 
   flex-direction: column;
   align-items: flex-start;
@@ -263,5 +265,9 @@ const MarkAll = styled.div`
 const NotifsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 50px;
+  padding: 0 15px;
+  
+  @media (min-width: 768px) {
+    padding: 0 50px;
+  }
 `;
