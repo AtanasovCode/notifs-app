@@ -1,8 +1,39 @@
-# React + Vite
+# Frontendmentor.io Notifications Page Solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a solution to the notifications website design challenge taken from [frontendmentor.io](https://www.frontendmentor.io/). This solution includes a new feature not included in the original design.
 
-Currently, two official plugins are available:
+![](/src/assets/screenshots/multi-screen.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- View the optimal layout depending on their screen width
+- See the hover effects on the elements that can be interacted with
+- Toggle between day/night mode
+
+## Built With:
+
+- [React.js](https://react.dev/)
+- [styled-components](https://styled-components.com/)
+- HTML5
+- CSS3
+- CSS media queries
+- Reusable React Components
+
+## Links
+
+Live Site URL -> [notifs-app](https://notifs-app.netlify.app/)
+
+## Day/Night Mode Toggle
+
+![](/src/assets/screenshots/toggle-switch.png)
+
+Toggle between the original day mode and the custom-made night mode
+
+# Author
+
+[Check me out on GitHub](https://github.com/AtanasovCode/)
+[See all my other solutions](https://www.frontendmentor.io/profile/AtanasovCode)
